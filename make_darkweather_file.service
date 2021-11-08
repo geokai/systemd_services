@@ -1,0 +1,14 @@
+[Unit]
+Description=Create darkweatherreport file in /tmp
+
+[Service]
+ExecStartPost=/bin/sleep 2
+ExecStart=/usr/bin/bash  make_darkweatherreport_file
+WorkingDirectory=/home/geoptus/.config/scripts/services
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=geoptus
+
+[Install]
+WantedBy=multi-user.target

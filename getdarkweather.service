@@ -1,0 +1,19 @@
+[Unit]
+Description=Run DarkWeather report script on boot
+
+Wants=network.target
+After=syslog.target network-online.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/bash getdarkweather
+WorkingDirectory=/home/geoptus/.config/scripts/services
+StandardOutput=inherit
+StandardError=inherit
+Restart=on-failure
+RestartSec=10
+KillMode=process
+User=geoptus
+
+[Install]
+WantedBy=multi-user.target

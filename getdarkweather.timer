@@ -1,0 +1,11 @@
+[Unit]
+Description=Get Dark Weather at intervals
+
+[Timer]
+OnCalendar=*:00/30:00
+AccuracySec=15m
+Persistent=true
+Unit=getdarkweather.service
+
+[Install]
+WantedBy=timers.target
